@@ -1,7 +1,15 @@
+# Author: Alexander Sutter
+# Date: April 4, 2022
+# Latest Revision: April 4, 2022
+
 import turtle as t
 
 count = 0
-spaces = [["", "", ""], ["", "", ""], ["", "", ""]]
+spaces = [
+    ["", "", ""], 
+    ["", "", ""], 
+    ["", "", ""]
+]
 row = 0
 col = 0
 
@@ -30,7 +38,6 @@ def drawBoard():
     t.penup()
     t.goto(0, 0)
 
-
 def makeX(Pos):
     t.goto(Pos)
     t.pendown()
@@ -41,7 +48,6 @@ def makeX(Pos):
         t.rt(90)
     t.lt(45)
     t.penup()
-
 
 def makeO(Pos):
     t.goto(Pos)
@@ -54,7 +60,6 @@ def makeO(Pos):
     t.lt(90)
     t.fd(50)
     t.rt(90)
-
 
 def correctX(x):
     global col
@@ -69,7 +74,6 @@ def correctX(x):
         col = 2
     return x
 
-
 def correctY(y):
     global row
     if y < -55.0:
@@ -83,12 +87,10 @@ def correctY(y):
         row = 0
     return y
 
-
 def correctPosition(x, y):
     x = correctX(x)
     y = correctY(y)
     return (x, y)
-
 
 def recordPlay(player):
     print(str(row) + ", " + str(col))
